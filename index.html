@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopify Style Order Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 50px 15px;
+    }
+
+    .checkout-container {
+      max-width: 550px;
+      background: #fff;
+      margin: 0 auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 35px;
+      color: #222;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #5c67f2;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      background-color: #5c67f2;
+      color: white;
+      padding: 16px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #434de0;
+    }
+
+    @media (max-width: 600px) {
+      .checkout-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <h2>Place Your Order</h2>
+
+    <form action="https://formspree.io/f/mgvyjqbe" method="POST">
+      <!-- 🔐 Secret Code (invisible to customer) -->
+      <input type="hidden" name="Secret Code" value="MZ1534200033HAAS474">
+
+      <label>Email:</label>
+      <input type="email" name="Email" required>
+
+      <label>Full Name:</label>
+      <input type="text" name="Full Name" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" name="Phone Number" required>
+
+      <label>City:</label>
+      <input type="text" name="City" required>
+
+      <label>Sector / Block / Area:</label>
+      <input type="text" name="Area" required>
+
+      <label>Full Address:</label>
+      <textarea name="Full Address" rows="3" required></textarea>
+
+      <label>Size:</label>
+      <select name="Size" required>
+        <option value="">Select Size</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+
+      <label>Payment Method:</label>
+      <select name="Payment Method" required>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+      </select>
+
+      <label>Quantity:</label>
+      <input type="number" name="Quantity" min="1" required>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+
+</body>
+</html>
